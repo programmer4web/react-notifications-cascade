@@ -1,0 +1,64 @@
+{
+  "name": "react-notifications-cascade",
+  "version": "1.0.0",
+  "description": "A sleek, animated notifications system built with React and Material UI",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "@mui/material": ">=5.0.0",
+    "@mui/icons-material": ">=5.0.0",
+    "@emotion/react": ">=11.0.0",
+    "@emotion/styled": ">=11.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@types/jest": "^29.5.2",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "jest": "^29.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.25.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.6"
+  },
+  "keywords": [
+    "react",
+    "notifications",
+    "material-ui",
+    "toast",
+    "alerts",
+    "snackbar",
+    "cascade",
+    "animation"
+  ],
+  "author": "Andrei-Constantin Alexandru",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/programmer4web/react-notifications-cascade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/programmer4web/react-notifications-cascade/issues"
+  },
+  "homepage": "https://github.com/programmer4web/react-notifications-cascade#readme"
+}
