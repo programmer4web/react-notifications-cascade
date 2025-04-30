@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNotifications } from './index.d';
+import { useNotifications } from '.';
 
 // Example usage component
 export const NotificationsDemo = () => {
@@ -103,7 +103,7 @@ export const NotificationsDemo = () => {
 export const DemoApp = () => {
   // Note: In a real application, you'd import NotificationsProvider
   // But for this demo file we assume it's available in scope
-  const NotificationsProvider = require('./index.d').default;
+  const NotificationsProvider = require('.').default;
   
   return (
     <NotificationsProvider>

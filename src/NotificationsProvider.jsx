@@ -21,6 +21,46 @@ function SlideUpTransition(props) {
   return <Slide {...props} direction="up" />;
 }
 
+// Component to display notifications
+const NotificationsContainer = ({ notifications, removeNotification }) => {
+  return (
+    <Stack 
+      spacing={1} 
+      sx={{ 
+        position: 'fixed',
+        bottom: 16,
+        right: 16,
+        zIndex: 9999,
+        maxWidth: '90%',
+        width: 'auto',
+      }}
+    >
+      {notifications.map(notification => (
+        <Snackbar
+          key={notification.id}
+          open={true}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          TransitionComponent={SlideUpTransition}
+          sx={{ 
+            position: 'relative', 
+            bottom: 'auto', 
+            right: 'auto' 
+          }}
+        >
+          <Alert
+            severity={notification.type}
+            variant="filled"
+            onClose={() => removeNotification(notification.id)}
+            sx={{ width: '100%', boxShadow: 3 }}
+          >
+            {notification.message}
+          </Alert>
+        </Snackbar>
+      ))}
+    </Stack>
+  );
+};
+
 // Provider component that makes notifications available to any child component
 export const NotificationsProvider = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
@@ -74,46 +114,6 @@ export const NotificationsProvider = ({ children }) => {
         removeNotification={removeNotification} 
       />
     </NotificationsContext.Provider>
-  );
-};
-
-// Component to display notifications
-const NotificationsContainer = ({ notifications, removeNotification }) => {
-  return (
-    <Stack 
-      spacing={1} 
-      sx={{ 
-        position: 'fixed',
-        bottom: 16,
-        right: 16,
-        zIndex: 9999,
-        maxWidth: '90%',
-        width: 'auto',
-      }}
-    >
-      {notifications.map(notification => (
-        <Snackbar
-          key={notification.id}
-          open={true}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          TransitionComponent={SlideUpTransition}
-          sx={{ 
-            position: 'relative', 
-            bottom: 'auto', 
-            right: 'auto' 
-          }}
-        >
-          <Alert
-            severity={notification.type}
-            variant="filled"
-            onClose={() => removeNotification(notification.id)}
-            sx={{ width: '100%', boxShadow: 3 }}
-          >
-            {notification.message}
-          </Alert>
-        </Snackbar>
-      ))}
-    </Stack>
   );
 };
 

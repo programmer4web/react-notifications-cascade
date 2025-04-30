@@ -4,7 +4,9 @@ export {
     NotificationsContext,
     useNotifications,
     notificationTypes
-  } from './NotificationsProvider';
-  
-  export default NotificationsProvider;
+  } from './NotificationsProvider.jsx';
+
+  export {
+    NotificationsDemo
+} from './NotificationsDemo.jsx';
   

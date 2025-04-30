@@ -10,16 +10,17 @@
   ],
   "scripts": {
     "build": "rollup -c",
+    "dev": "rollup -c -w",
     "test": "jest",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "@mui/material": ">=5.0.0",
-    "@mui/icons-material": ">=5.0.0",
     "@emotion/react": ">=11.0.0",
-    "@emotion/styled": ">=11.0.0"
+    "@emotion/styled": ">=11.0.0",
+    "@mui/icons-material": ">=5.0.0",
+    "@mui/material": ">=5.0.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
@@ -61,5 +62,8 @@
     "url": "https://github.com/programmer4web/react-notifications-cascade/issues"
   },
   "homepage": "https://github.com/programmer4web/react-notifications-cascade#readme",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "dependencies": {
+    "rollup-plugin-typescript2": "^0.36.0"
+  }
 }

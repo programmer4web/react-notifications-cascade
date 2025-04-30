@@ -1,13 +1,12 @@
+// index.d.ts
 import { ReactNode, FC } from 'react';
 
-export interface NotificationType {
+export interface NotificationTypes {
   success: string;
   error: string;
   warning: string;
   info: string;
 }
-
-export const notificationTypes: NotificationType;
 
 export interface Notification {
   id: string;
@@ -26,14 +25,17 @@ export interface NotificationsContextValue {
   showInfo: (message: string) => string;
 }
 
-export const NotificationsContext: React.Context<NotificationsContextValue>;
-
 export interface NotificationsProviderProps {
   children: ReactNode;
 }
 
+export const notificationTypes: NotificationTypes;
+export const NotificationsContext: React.Context<NotificationsContextValue | undefined>;
 export const NotificationsProvider: FC<NotificationsProviderProps>;
-
 export function useNotifications(): NotificationsContextValue;
 
+// Demo component
+export const NotificationsDemo: FC;
+
+// Default export
 export default NotificationsProvider;
