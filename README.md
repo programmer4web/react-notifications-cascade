@@ -2,7 +2,6 @@
 
 A sleek, animated notifications system built with React and Material UI that displays notifications in the bottom-right corner of the screen, animates them upward in a cascade style, and automatically removes them after 5 seconds.
 
-![Notifications Demo](https://via.placeholder.com/600x300)
 
 ## Features
 
