@@ -1,7 +1,7 @@
 {
   "name": "react-notifications-cascade",
-  "version": "1.0.0",
-  "description": "A sleek, animated notifications system built with React and Material UI",
+  "version": "2.0.0",
+  "description": "A flexible notification system with action button support, configurable duration, and backwards compatibility built with React and Material UI",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -49,6 +49,7 @@
     "material-ui",
     "toast",
     "alerts",
+    "action-buttons",
     "snackbar",
     "cascade",
     "animation"

@@ -2,6 +2,12 @@
 
 A sleek, animated notifications system built with React and Material UI that displays notifications in the bottom-right corner of the screen, animates them upward in a cascade style, and automatically removes them after 5 seconds.
 
+## What's New in Version 2
+
+  1. **Action button support** - Optional action parameter with customizable behavior
+  2. **Configurable duration** - Set custom auto-dismiss time or make persistent
+  3. **Enhanced helpers** - showSuccessWithAction() and similar methods
+  4. **100% backwards compatible** - All existing code continues to work
 
 ## Features
 
