@@ -148,6 +148,53 @@ import React from 'react';
             Simulate Multi-Step Process
           </button>
         </div>
+
+        <h2>5. Multiple Action Buttons (NEW in 2.1)</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '10px', marginBottom: '20px' }}>
+          <button
+            onClick={() => showSuccess('File moved to trash', {
+              duration: 8000,
+              actions: [
+                { text: 'Undo', onClick: () => showInfo('File restored') },
+                { text: 'View Trash', onClick: () => console.log('Opening trash...') }
+              ]
+            })}
+            style={buttonStyle('#4caf50')}
+          >
+            Success with Two Actions
+          </button>
+
+          <button
+            onClick={() => showInfo('Protect your account with two-factor authentication.', {
+              duration: Infinity,
+              actions: [
+                { text: 'Set Up Now', variant: 'outlined', onClick: () => showSuccess('Opening security settings...') },
+                { text: 'Remind Me Later', onClick: () => showInfo('We will remind you next time') },
+                { text: "Don't Show Again", onClick: () => showWarning('Reminder turned off') }
+              ]
+            })}
+            style={buttonStyle('#2196f3')}
+          >
+            Persistent with Three Actions
+          </button>
+
+          <button
+            onClick={() => showWarning('Unsaved changes in 2 documents', {
+              duration: Infinity,
+              actions: [
+                {
+                  text: 'Save All',
+                  closeOnClick: false, // Keep open, e.g. to show progress
+                  onClick: (id) => showSuccess(`Saved (from notification ${id})`)
+                },
+                { text: 'Discard', onClick: () => showError('Changes discarded') }
+              ]
+            })}
+            style={buttonStyle('#ff9800')}
+          >
+            Action that Keeps the Notification Open
+          </button>
+        </div>
       </div>
     );
   };

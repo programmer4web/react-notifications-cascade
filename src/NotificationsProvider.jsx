@@ -53,16 +53,20 @@ import React, { useState } from 'react';
               variant="filled"
               sx={{ width: '100%', boxShadow: 3 }}
               action={
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  {/* Action button (optional) */}
-                  {notification.action && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: '8px', alignItems: 'center' }}>
+                  {/* Action buttons (optional) */}
+                  {notification.actions.map((action, index) => (
                     <Button
+                      key={index}
                       color="inherit"
                       size="small"
+                      variant={action.variant || 'text'}
                       onClick={() => {
-                        notification.action.onClick();
+                        if (typeof action.onClick === 'function') {
+                          action.onClick(notification.id);
+                        }
                         // Optionally auto-close after action
-                        if (notification.action.closeOnClick !== false) {
+                        if (action.closeOnClick !== false) {
                           removeNotification(notification.id);
                         }
                       }}
@@ -71,9 +75,9 @@ import React, { useState } from 'react';
                         fontWeight: 'bold'
                       }}
                     >
-                      {notification.action.text}
+                      {action.text}
                     </Button>
-                  )}
+                  ))}
 
                   {/* Close button */}
                   <IconButton
@@ -105,20 +109,26 @@ import React, { useState } from 'react';
      * @param {string} type - Type of notification (success, error, warning, info)
      * @param {object} options - Optional configuration
      * @param {number} options.duration - Auto-dismiss duration in ms (default: 5000, use Infinity for no auto-dismiss)
-     * @param {object} options.action - Optional action button { text: string, onClick: function, closeOnClick?: boolean }
+     * @param {object} options.action - Optional action button { text: string, onClick: function, closeOnClick?: boolean, variant?: string }
+     * @param {object[]} options.actions - Optional list of action buttons, same shape as options.action (shown after options.action)
      * @returns {string} The notification ID
      */
     const addNotification = (message, type = 'info', options = {}) => {
       const {
         duration = 5000,
         action = null,
-      } = options;
+        actions = null,
+      } = options || {};
 
       const newNotification = {
         id: generateId(),
         message,
         type,
         action,
+        actions: [
+          ...(action ? [action] : []),
+          ...(Array.isArray(actions) ? actions.filter(Boolean) : []),
+        ],
         timestamp: new Date(),
       };
 

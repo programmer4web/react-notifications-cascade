@@ -3,7 +3,6 @@ const commonjs = require('@rollup/plugin-commonjs');
 const babel = require('@rollup/plugin-babel');
 const terser = require('@rollup/plugin-terser');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
-const typescript = require('@rollup/plugin-typescript');
 const json = require('@rollup/plugin-json');
 const pkg = require('./package.json');
 
@@ -37,11 +36,7 @@ module.exports = [
       
       // Convert CommonJS modules to ES6
       commonjs(),
-      
-      // Compile TypeScript files
-      typescript({
-      }),
-      
+
       // Transpile with Babel
       babel({
         babelHelpers: 'bundled',
