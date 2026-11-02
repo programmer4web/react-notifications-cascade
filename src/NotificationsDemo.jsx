@@ -1,5 +1,5 @@
 import React from 'react';
-  import { useNotifications } from '.';
+  import { useNotifications } from './NotificationsProvider.jsx';
 
   // Enhanced demo component showcasing all new features
   export const NotificationsDemo = () => {

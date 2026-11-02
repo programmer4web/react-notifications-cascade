@@ -37,6 +37,10 @@
     "rollup": "^4.67.4",
     "rollup-plugin-peer-deps-external": "^2.2.4"
   },
+  "resolutions": {
+    "browserslist": "^4.29.5",
+    "picomatch": "^4.0.7"
+  },
   "keywords": [
     "react",
     "notifications",

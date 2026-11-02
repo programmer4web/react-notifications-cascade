@@ -4,7 +4,10 @@ const babel = require('@rollup/plugin-babel');
 const terser = require('@rollup/plugin-terser');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const json = require('@rollup/plugin-json');
+const path = require('path');
 const pkg = require('./package.json');
+
+const providerPath = path.resolve(__dirname, 'src/NotificationsProvider.jsx');
 
 module.exports = [
   // CommonJS (for Node) and ES module (for bundlers) build
@@ -66,12 +69,16 @@ module.exports = [
       {
         file: 'dist/demo.js',
         format: 'cjs',
+        exports: 'named',
         sourcemap: true,
+        // Share the main bundle's provider/context instead of bundling a second copy
+        paths: { [providerPath]: './index.js' },
       },
       {
         file: 'dist/demo.esm.js',
         format: 'esm',
         sourcemap: true,
+        paths: { [providerPath]: './index.esm.js' },
       },
     ],
     plugins: [
@@ -96,7 +103,7 @@ module.exports = [
       '@mui/icons-material',
       '@emotion/react',
       '@emotion/styled',
-      './NotificationsProvider',
+      providerPath,
     ],
   },
 ];
