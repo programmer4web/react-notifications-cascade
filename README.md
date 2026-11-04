@@ -4,6 +4,8 @@ A sleek, animated notifications system built with React and Material UI that dis
 
 **[Live demo](https://components.evaficy.com/?path=/story/dynamic-components--notifications-cascade-demo)**
 
+> Built by **[EVAFICY](https://evaficy.com/?utm_source=oss&utm_medium=readme&utm_campaign=react-notifications-cascade)**, a web development company from Iasi, Romania, with 10+ years building React, TypeScript and Node.js applications. Need custom React components or a full web application? [Contact EVAFICY](https://evaficy.com/contact-evaficy/?utm_source=oss&utm_medium=readme&utm_campaign=react-notifications-cascade).
+
 ## What's New in Version 2.1
 
   1. **Multiple action buttons** - Pass an `actions` array to show several buttons on one notification
@@ -320,6 +322,7 @@ react-notifications-cascade is compatible with all modern browsers and React 16.
 
 ## Changelog
 
+- **2.1.1** - README: EVAFICY credit and contact links.
 - **2.1.0** - Multiple action buttons (`actions`), `onClick` receives the notification ID, per-action `variant`, TypeScript declarations included in the package, build tooling updated. Fully backwards compatible.
 - **2.0.0** - Single action button support, configurable duration, `show*WithAction` helpers.
 - **1.0.0** - Initial release.
@@ -337,3 +340,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+---
+
+Made by [EVAFICY](https://evaficy.com/?utm_source=oss&utm_medium=readme&utm_campaign=react-notifications-cascade): custom React & Node.js development, full-stack applications and AI-powered QA with Evaficy Smart Test. [Get in touch](https://evaficy.com/contact-evaficy/?utm_source=oss&utm_medium=readme&utm_campaign=react-notifications-cascade).

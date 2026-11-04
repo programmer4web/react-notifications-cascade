@@ -1,6 +1,6 @@
 {
   "name": "react-notifications-cascade",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A flexible notification system with multiple action buttons, configurable duration, and backwards compatibility built with React and Material UI",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
