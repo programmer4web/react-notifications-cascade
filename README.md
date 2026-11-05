@@ -322,6 +322,7 @@ react-notifications-cascade is compatible with all modern browsers and React 16.
 
 ## Changelog
 
+- **2.1.2** - README: links to Evaficy Smart Test, live demos, GitHub and npm, plus a contact line for new components or projects.
 - **2.1.1** - README: EVAFICY credit and contact links.
 - **2.1.0** - Multiple action buttons (`actions`), `onClick` receives the notification ID, per-action `variant`, TypeScript declarations included in the package, build tooling updated. Fully backwards compatible.
 - **2.0.0** - Single action button support, configurable duration, `show*WithAction` helpers.
